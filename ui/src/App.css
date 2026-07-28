@@ -1,0 +1,592 @@
+/* =======================================================
+   Common Colors
+======================================================= */
+
+.text-color1 {
+    color: #E65100;
+}
+
+.bg-color1 {
+    background: #E65100;
+}
+
+.text-color2 {
+    color: #6A1B9A;
+}
+
+.bg-color2 {
+    background: #6A1B9A;
+}
+
+
+
+/* =========================================================
+   02. NAVBAR  →  Navbar.jsx
+   Top bar + main menu (taller height)
+   ========================================================= */
+.zentora-nav {
+  background: #fff;
+  border-bottom: 1px solid #e8eaee;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* --- Top bar --- */
+.header-top-bar {
+  background: #1c1d20;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.top-bar-link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.top-bar-link:hover {
+  color: #fff;
+  opacity: 0.85;
+}
+
+.top-bar-icon {
+  color: #1ab69d;
+  font-size: 13px;
+}
+
+.top-bar-sep {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.top-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1ab69d;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.top-bar-btn:hover {
+  background: #159a85;
+  color: #fff !important;
+}
+
+/* --- Main menu --- */
+.zentora-nav .main-navbar {
+  min-height: 78px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: #fff;
+}
+
+.zentora-nav .navbar-brand {
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.zentora-nav .brand-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 15px;
+}
+
+.zentora-nav .brand-text {
+  font-size: 1.45rem;
+}
+
+.zentora-nav .navbar-toggler {
+  border: 1px solid #d0d4db;
+  padding: 6px 10px;
+}
+
+.zentora-nav .navbar-nav {
+  gap: 4px;
+}
+
+.zentora-nav .nav-link {
+  color: #3d4450 !important;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 16px !important;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.zentora-nav .nav-link:hover,
+.zentora-nav .nav-link.active {
+  color: var(--orange) !important;
+}
+
+@media (min-width: 992px) {
+  .zentora-nav .navbar-collapse {
+    display: flex !important;
+  }
+
+  .zentora-nav .navbar-nav {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Menu center me — pehle jahan tha */
+  .zentora-nav .nav-menu-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 991px) {
+  .zentora-nav .main-navbar {
+    min-height: 64px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .zentora-nav .navbar-collapse {
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+}
+
+
+
+
+/* =======================================================
+   Hero Section
+======================================================= */
+
+.hero {
+    min-height: 300px;
+}
+
+.herotitle {
+    margin-top: 70px;
+    color: white;
+    font-size: 45px;
+}
+
+.herodes {
+    color: white;
+    font-size: 18px;
+}
+
+.herobtn:hover {
+    background: #E65100;
+}
+
+.herodot {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: 150px;
+}
+
+.herosideimg {
+    position: absolute;
+    top: 100px;
+    right: 0;
+}
+
+
+/* =======================================================
+   Common Heading
+======================================================= */
+
+.webheading {
+    text-align: center;
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* =======================================================
+   Categories Section
+======================================================= */
+
+.category {
+    min-height: 300px;
+}
+
+.catcard {
+    background: #90ee90;
+    transition: 1s;
+}
+
+.catcard:hover {
+    background: #1ab69d;
+}
+
+.catcard1 {
+    background: #ffe4c4;
+    transition: 1s;
+}
+
+.catcard1:hover {
+    background: #ee4a62;
+}
+
+.catcard2 {
+    background: #ffb6c1;
+    transition: 1s;
+}
+
+.catcard2:hover {
+    background: #C71585;
+}
+
+
+/* =======================================================
+   Trending Section
+======================================================= */
+
+.trending {
+    min-height: 300px;
+}
+
+.trending span {
+    width: 80px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.trendingstar {
+    font-size: 11px;
+}
+
+.trendingprice {
+    font-size: 14px;
+}
+
+.trendingcard {
+    transition: 0.5s;
+}
+
+.trendingcard:hover {
+    transform: scale(1.02);
+}
+
+
+/* =======================================================
+   Trusted Section
+======================================================= */
+
+.trusted {
+    min-height: 300px;
+}
+
+.trustedimg {
+    position: absolute;
+    top: -30px;
+    right: -10px;
+}
+
+.trusteddiv {
+    padding: 50px 30px;
+    font-size: 15px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =======================================================
+   Testimonial Section
+======================================================= */
+
+.testimonial {
+    min-height: 300px;
+}
+
+.testhead {
+    font-size: 35px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+.testp {
+    color: grey;
+    font-size: 13px;
+    padding-top: 10px;
+    text-align: justify;
+}
+
+.teststar {
+    font-size: 10px;
+    margin: 0;
+}
+
+.testpost {
+    color: grey;
+    font-size: 12px;
+}
+
+
+/* =======================================================
+   Articles Section
+======================================================= */
+
+.articles {
+    min-height: 300px;
+}
+
+
+/* =======================================================
+   Contact Section
+======================================================= */
+
+.contact {
+    min-height: 300px;
+}
+
+.contactor {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #E65100;
+    background: white;
+    font-size: 20px;
+}
+
+
+/* =======================================================
+   Footer
+======================================================= */
+
+.footer {
+    min-height: 300px;
+    background: #f0f4f5;
+}
+
+.linkfooter {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.linkfooter:hover {
+    color: orange;
+    padding-left: 5px;
+}
+
+.footerinput {
+    height: 37px;
+}
+
+
+/* =======================================================
+   Footer Social Icons
+======================================================= */
+
+.facebookfooter {
+    color: #1A86EC;
+}
+
+.linkedfooter {
+    color: #0A66C2;
+}
+
+.instagramfooter {
+    color: #C658B3;
+}
+
+.twiterfooter {
+    color: #1DA1F2;
+}
+
+.youtubefooter {
+    color: #CD201F;
+}
+
+
+/* =======================================================
+   Copyright
+======================================================= */
+
+.copyright {
+    background: #EBEFF0;
+}
+
+.copyright p {
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+/* register css */
+.register-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 45px;
+}
+
+.small-title {
+  color: #ff5a1f;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+h1 {
+  color: #222;
+}
+
+.signin-link {
+  color: #ff5a1f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signin-link:hover {
+  text-decoration: underline;
+}
+
+.form-label {
+  color: #222;
+}
+
+.form-control,
+.form-select {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #ff5a1f;
+  box-shadow: 0 0 0 0.15rem rgba(255, 90, 31, 0.2);
+}
+
+.register-btn {
+  height: 50px;
+  background: #ff5a1f;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.register-btn:hover {
+  background: #e74c0f;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* login css */
+.login-page {
+    min-height: 100vh;
+    background: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 640px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 45px;
+}
+
+.welcome-text {
+    color: #ff5a1f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.create-link {
+    color: #ff5a1f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.create-link:hover {
+    text-decoration: underline;
+}
+
+.form-control,
+.form-select {
+    height: 46px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ff5a1f;
+    box-shadow: 0 0 0 .15rem rgba(255,90,31,.2);
+}
+
+.login-btn {
+    height: 50px;
+    background: #ff5a1f;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.login-btn:hover {
+    background: #e84f12;
+    color: #fff;
+}
+
+.demo-text {
+    font-size: 13px;
+    color: #666;
+}
+
+.demo-text strong {
+    color: #222;
+}
+
+@media(max-width:768px){
+
+    .login-card{
+        padding:30px 20px;
+    }
+
+    .demo-text{
+        font-size:12px;
+    }
+
+}
