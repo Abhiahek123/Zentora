@@ -1,98 +1,118 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { CiFacebook } from "react-icons/ci";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa6";
-import { FaCheckCircle } from "react-icons/fa";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import {
+  FaCheck,
+  FaArrowRight,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+  FaChevronUp,
+} from 'react-icons/fa'
 
 const Footer = () => {
+  const [email, setEmail] = useState('')
+
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
   return (
-    <>
-      <div className="row footer py-5">
-        <div className="col-sm-10 mx-auto">
-          <div className="row">
-             {/* coloum1 */}
-            <div className="col-lg-3 col-md-6 col-12  p-4 text-dark">
-              <h3 className="mb-4 fw-bold">
-                <FaCheckCircle style={{ color: "#f2520d" }} /> Zent
-                <span style={{ color: "#ee4a05" }}>tore</span>
-              </h3>
-              <p>
-                Zentora-where talent Meets <br /> Opportunity. The Future of{" "}
-                <br /> freelancing in here. Connect. <br /> Collaborate
-                Earn{" "}
-              </p>
-              <p>
-                <b>Add:</b> 70-80 Upper St Norwich NR2
-              </p>
-              <p>
-                <b>Call:</b> +01235641231
-              </p>
-              <p>
-                <b>Add:</b> hello@zentora.com
-              </p>
-            </div>
+    <footer className="site-footer">
+      <div className="container">
+        <div className="row g-4 g-lg-5">
+          <div className="col-lg-3 col-md-6">
+            <Link to="/" className="footer-brand d-flex align-items-center gap-2">
+              <span className="brand-icon"><FaCheck /></span>
+              <span className="brand-text">Zentora</span>
+            </Link>
+            <p className="footer-about">
+              Zentora — Where Talent Meets Opportunity. The future of freelancing
+              is here. Connect. Collaborate. Earn.
+            </p>
+            <p className="footer-contact"><b>Add:</b> 70-80 Upper St Norwich NR2</p>
+            <p className="footer-contact"><b>Call:</b> +01 123 5641 231</p>
+            <p className="footer-contact"><b>Email:</b> hello@zentora.com</p>
+          </div>
 
-            {/* column2 */}
+          <div className="col-lg-3 col-md-6">
+            <h5>Zentora Platform</h5>
+            <ul className="list-unstyled footer-links">
+              <li><Link to="/about-us">About</Link></li>
+              <li><Link to="/services">Browse Projects</Link></li>
+              <li><Link to="/services">Find Freelancers</Link></li>
+              <li><Link to="/register">Post a Project</Link></li>
+              <li><Link to="/about-us">How It Works</Link></li>
+              <li><Link to="/about-us">Success Stories</Link></li>
+            </ul>
+          </div>
 
-            <div className="col-lg-3 col-md-6 col-12 p-4 text-dark">
-              <h4 className="fw-bold mb-4">Zentora Platform</h4>
-              <p>About</p>
-              <p>Browser Projects</p>
-              <p>Find Freelancers</p>
-              <p>Post a Projct</p>
-              <p>How it Works</p>
-              <p>Success Stories</p>
-            </div>
-             
+          <div className="col-lg-3 col-md-6">
+            <h5>Links</h5>
+            <ul className="list-unstyled footer-links">
+              <li><Link to="/contact-us">Contact Us</Link></li>
+              <li><Link to="/services">Gallery</Link></li>
+              <li><Link to="/">News &amp; Articles</Link></li>
+              <li><Link to="/contact-us">FAQ&apos;s</Link></li>
+              <li><Link to="/">Coming Soon</Link></li>
+              <li><Link to="/login">Sign In/Registration</Link></li>
+            </ul>
+          </div>
 
-             {/* column3 */}
-            <div className="col-lg-3 col-md-6 col-12 p-4 text-dark">
-              <h3 className="fw-bold mb-4">Links</h3>
-              <Link to="/" className="linkfooter"> Contact Us</Link>
-              <Link to="/" className="linkfooter">Gallery</Link>
-              <Link to="/" className="linkfooter"> News & Articies</Link>
-              <Link to="/" className="linkfooter">FAQ</Link>
-              <Link to="/" className="linkfooter">Coming Soon</Link>
-              <Link to="/" className="linkfooter">Sign In/Registratio</Link>
-            </div>
-             
-
-             {/* column4 */}
-
-            <div className="col-lg-3 col-md-6 col-12 p-4 text-dark">
-              <h3 className="fw-bold mb-4">Contacts</h3>
-              <p>
-                Enter Your email address to register to our <br /> newsletter
-                subscription
-              </p>
-              <div className="d-flex flex-column flex-sm-row gap-2">
-                <input type="email" placeholder="Your email" className="form-control footerinput"/>
-               <button className="btn btn-info">Subscribe</button>
-              </div>
-
-              <div className="iconfooter m-3">
-                <CiFacebook className="me-3 facebookfooter" />
-                <FaLinkedinIn className="me-3 linkedfooter" />
-                <FaInstagram className="me-3 instagramfooter" />
-                <FaTwitter className="me-3 twiterfooter" />
-                <FaYoutube className="me-3 youtubefooter" />
-              </div>
+          <div className="col-lg-3 col-md-6">
+            <h5>Contacts</h5>
+            <p className="footer-about">
+              Enter your email address to register to our newsletter subscription
+            </p>
+            <form
+              className="footer-subscribe"
+              onSubmit={(e) => {
+                e.preventDefault()
+                setEmail('')
+              }}
+            >
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn btn-teal">
+                Subscribe <FaArrowRight className="ms-1" />
+              </button>
+            </form>
+            <div className="footer-social">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="facebook" aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="linkedin" aria-label="LinkedIn">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="instagram" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="twitter" aria-label="Twitter">
+                <FaTwitter />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="youtube" aria-label="YouTube">
+                <FaYoutube />
+              </a>
             </div>
           </div>
         </div>
-        <div className="copyright py-5">
-          <p className="m-0 text-center">
-            Copyright 2026
-            <span className="text-info fw-bold"> Zentora </span>— Hire. Work.
-            Grow. All Rights Reserved
+
+        <div className="footer-bottom">
+          <p>
+            Copyright 2026 <span>Zentora</span> — Hire. Work. Grow. All Rights Reserved
           </p>
+          <button type="button" className="scroll-top" onClick={scrollTop} aria-label="Scroll to top">
+            <FaChevronUp />
+          </button>
         </div>
       </div>
-    </>
-  );
-};
+    </footer>
+  )
+}
 
-export default Footer;
+export default Footer

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 
-const AdminProjects = () => {
+const AdminClients = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const AdminProjects = () => {
   }, []);
 
   const fetchData = async () => {
-      const res = await axios.get("http://localhost:9000/admin-project-list");
+    const res = await axios.get("http://localhost:9000/admin-clients-list");
       setData(res?.data?.result);
   };
 
@@ -19,7 +19,7 @@ const AdminProjects = () => {
       <div className="row">
         <div className="col-12">
           <span className="dash-eyebrow">Zentora Admin</span>
-          <h2 className="dash-heading">Manage All Projects</h2>
+          <h2 className="dash-heading">Manage Clients</h2>
         </div>
       </div>
 
@@ -30,13 +30,10 @@ const AdminProjects = () => {
               <table className="table dash-table mb-0">
                 <thead>
                   <tr>
-                    <th>Project Title</th>
-                    <th>Description</th>
-                    <th>Budget</th>
-                    <th>Timeline</th>
-                    <th>Client Id</th>
+                    <th>Client Name</th>
+                    <th>Email</th>
                     <th>Status</th>
-                   
+                    <th>Actions</th>
                   </tr>
                 </thead>
 
@@ -44,27 +41,31 @@ const AdminProjects = () => {
                   {data.length > 0 ? (
                     data.map((item) => (
                       <tr key={item._id}>
-                        <td>{item.title}</td>
-                        <td>{item.desc}</td>
-                        <td>₹{item.budget}</td>
-                        <td>{item.duration}</td>
-                        <td>{item.clientId}</td>
+                        <td>{item.name}</td>
+                        <td>{item.email}</td>
                         <td>
                           <span
                             className={
-                              item.status ? "status-ok" : "status-pending"
+                              item.status ? "status-ok" : "status-danger"
                             }
                           >
-                            {item.status ? "Active" : "Pending"}
+                            {item.status ? "Active" : "Inactive"}
                           </span>
                         </td>
-                         
+                        <td>
+                          <button
+                            type="button"
+                            className="action-btn action-btn-delete"
+                          >
+                            <FaTrash /> Delete
+                          </button>
+                        </td>
                       </tr>
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="7" className="text-center py-3">
-                        No Projects Found
+                      <td colSpan="4" className="text-center py-3">
+                        No Clients Found
                       </td>
                     </tr>
                   )}
@@ -78,4 +79,4 @@ const AdminProjects = () => {
   );
 };
 
-export default AdminProjects;
+export default AdminClients;

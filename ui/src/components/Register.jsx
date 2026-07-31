@@ -4,7 +4,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from "axios";
 import Swal from "sweetalert2";
-
 const schema = yup
   .object()
   .shape({
@@ -18,27 +17,25 @@ const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
-  const handleRegister = async(data) => {
-    const res =await axios.post('http://localhost:9000/register', data)
-    if(res?.data?.success == true) {
-      Swal.fire ({
-        title:"Register",
+  const handleRegister = async (data) => {
+    const res = await axios.post('http://localhost:9000/register', data)
+    if (res?.data?.success == true) {
+      Swal.fire({
+        title: "Register",
         text: res?.data?.message,
-        icon:"success"
+        icon: "success"
       })
-
-    }else {
-      Swal.fire ({
-         title:"Register",
+    } else {
+      Swal.fire({
+        title: "Register",
         text: res?.data?.message,
-        icon:"error"
+        icon: "error"
       })
-    }
-
+    } 
   }
   return (
     <div className="register-page d-flex justify-content-center align-items-center">
-      <div className="register-card shadow">
+      <div className="register-card">
         <p className="text-uppercase small-title mb-2">Get Started</p>
 
         <h1 className="fw-bold mb-2">Create Account</h1>
