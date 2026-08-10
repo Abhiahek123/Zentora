@@ -29,4 +29,4 @@ router.post('/user-purchase-plan', userPurchasePlan)
 router.post('/user-create-bids', createUserBids)
 router.get('/user-get-bids', getUserBids)
 router.put('/user-profile-update', UserProfileUpdate)
-export default router;
+export default router;``
