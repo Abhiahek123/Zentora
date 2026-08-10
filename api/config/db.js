@@ -1,10 +1,14 @@
-import mongoose from "mongoose"
+import "dotenv/config";
+import mongoose from "mongoose";
 
 const dbconnect = async () => {
-    const con = await mongoose.connect('mongodb://localhost:27017/zentora');
-    if (con) {
-        console.log('database connected successfully');
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
 
+        console.log("Database connected successfully");
+    } catch (error) {
+        console.log("Database connection failed:", error.message);
     }
-}
-export default dbconnect
+};
+
+export default dbconnect;
