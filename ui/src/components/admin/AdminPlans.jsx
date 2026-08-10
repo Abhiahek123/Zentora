@@ -20,7 +20,7 @@ const AdminPlans = () => {
     fetchData()
   }, [])
   const fetchData = async () => {
-    const res = await axios.get('http://localhost:9000/admin-get-plans');
+    const res = await axios.get('https://project-east.onrender.com/admin-get-plans');
     setData(res?.data?.result)
   }
   const {
@@ -34,7 +34,7 @@ const AdminPlans = () => {
   });
 
   const onSubmit = async (data) => {
-    const res = await axios.post('http://localhost:9000/admin-create-plan', data);
+    const res = await axios.post('https://project-east.onrender.com/admin-create-plan', data);
     if (res?.data?.success == true) {
       Swal.fire({
         title: "Plan",

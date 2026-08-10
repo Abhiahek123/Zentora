@@ -54,7 +54,7 @@ const ClientProfile = () => {
       npassword: data.npassword || '',
     }
 
-    const res = await axios.put('http://localhost:9000/client-profile-update', finalData)
+    const res = await axios.put('https://project-east.onrender.com/client-profile-update', finalData)
 
     if (res?.data?.success === true) {
       localStorage.setItem(

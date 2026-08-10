@@ -13,7 +13,7 @@ const UserDashboard = () => {
 
   const fetchData = async () => {
     const userId = info?._id
-    const res = await axios.get(`http://localhost:9000/user-stats?userId=${userId}`)
+    const res = await axios.get(`https://project-east.onrender.com/user-stats?userId=${userId}`)
     setStats(res?.data?.result)
   }
 

@@ -9,7 +9,7 @@ const AdminBids = () => {
   }, [])
 
   const fetchData = async () => {
-    const res = await axios.get('http://localhost:9000/admin-biding-list')
+    const res = await axios.get('https://project-east.onrender.com/admin-biding-list')
     setData(res?.data?.result || [])
   }
 

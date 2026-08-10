@@ -10,7 +10,7 @@ const AdminClients = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await axios.get("http://localhost:9000/admin-clients-list");
+    const res = await axios.get("https://project-east.onrender.com/admin-clients-list");
       setData(res?.data?.result);
   };
 

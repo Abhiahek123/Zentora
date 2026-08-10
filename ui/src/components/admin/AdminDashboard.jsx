@@ -8,7 +8,7 @@ const AdminDashboard = () => {
     fetchData()
   }, [])
   const fetchData = async () => {
-    const res = await axios.get('http://localhost:9000/admin-stats')
+    const res = await axios.get('https://project-east.onrender.com/admin-stats')
     setData(res?.data?.result)
   }
 

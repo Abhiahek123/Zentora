@@ -13,7 +13,7 @@ const ClientDashboard = () => {
 
   const fetchData = async () => {
     const clientId = info?._id
-    const res = await axios.get(`http://localhost:9000/client-stats?clientId=${clientId}`)
+    const res = await axios.get(`https://project-east.onrender.com/client-stats?clientId=${clientId}`)
     setStats(res?.data?.result)
   }
 
